@@ -1,50 +1,160 @@
-# Welcome to your Expo app 👋
+# StickerSmash 🎨
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform mobile application built with Expo that allows users to select images, add emoji stickers, and save their creations. Perfect for creating fun and personalized images on iOS, Android, and the web.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 📸 **Image Selection**: Pick images from your device's photo library
+- 🎭 **Emoji Sticker Placement**: Add and position emoji stickers on your images
+- 💾 **Save Creations**: Save your sticker-decorated images to your device
+- 📱 **Cross-Platform**: Works seamlessly on iOS, Android, and web platforms
+- 🎯 **Interactive UI**: Intuitive bottom tab navigation and touch gestures
+- ✨ **Rich Emoji Library**: Access a wide selection of emoji stickers
 
+## Project Structure
+
+```
+StickerSmash/
+├── app/                          # App navigation and main routes
+│   ├── _layout.tsx              # Root layout configuration
+│   ├── +not-found.tsx           # 404 page
+│   └── (tabs)/                  # Tabbed navigation
+│       ├── _layout.tsx          # Tabs layout
+│       ├── index.tsx            # Main sticker editor screen
+│       └── about.tsx            # About screen
+├── components/                   # Reusable React components
+│   ├── Button.tsx               # Primary button component
+│   ├── CircleButton.tsx         # Circular button component
+│   ├── EmojiList.tsx            # List of available emoji stickers
+│   ├── EmojiPicker.tsx          # Emoji selection interface
+│   ├── EmojiSticker.tsx         # Individual emoji sticker component
+│   ├── IconButton.tsx           # Icon button component
+│   └── ImageViewer.tsx          # Image display component
+├── assets/                       # Static assets
+│   └── images/                  # Image resources
+├── package.json                 # Project dependencies
+├── tsconfig.json                # TypeScript configuration
+├── app.json                      # Expo app configuration
+└── README.md                    # This file
+```
+
+## Tech Stack
+
+- **Framework**: [Expo](https://expo.dev) with React Native
+- **Navigation**: Expo Router (file-based routing)
+- **Language**: TypeScript
+- **UI Components**: React Native with custom components
+- **Image Handling**: expo-image-picker, expo-media-library
+- **Icons**: @expo/vector-icons
+- **Image Processing**: dom-to-image, react-native-view-shot
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- Expo CLI (optional, will use npx)
+
+### Installation
+
+1. Clone or navigate to the project directory:
+
+   ```bash
+   cd StickerSmash
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
+### Running the App
+
+1. Start the development server:
 
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+   Or use platform-specific commands:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   npm run android    # Launch Android emulator
+   npm run ios        # Launch iOS simulator
+   npm run web        # Run on web
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+2. In the terminal output, choose your target platform:
+   - Press `a` for Android emulator
+   - Press `i` for iOS simulator
+   - Press `w` for web
+   - Scan QR code with Expo Go app for physical device testing
 
-## Get a fresh project
+## Available Scripts
 
-When you're ready, run:
+- `npm start` - Start the development server
+- `npm run android` - Run on Android emulator
+- `npm run ios` - Run on iOS simulator
+- `npm run web` - Run on web browser
+- `npm run lint` - Run ESLint to check code quality
+- `npm run reset-project` - Reset to a blank project structure
+
+## Usage
+
+1. **Open an Image**: Tap the image area to select a photo from your device
+2. **Add Stickers**: Use the emoji picker to select and place emoji stickers on your image
+3. **Position Stickers**: Drag stickers around to position them where you want
+4. **Save**: Use the save button to export your sticker-decorated image to your photo library
+
+## Development
+
+This project uses file-based routing with [Expo Router](https://docs.expo.dev/router/introduction/). The main app structure is defined in the `app/` directory.
+
+### Code Quality
+
+Run the linter to check code quality:
 
 ```bash
-npm run reset-project
+npm run lint
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### TypeScript
 
-## Learn more
+The project is fully typed with TypeScript. Check `tsconfig.json` for compiler options.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Deployment
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+To build a production-ready app:
 
-## Join the community
+```bash
+# For Android
+eas build --platform android
 
-Join our community of developers creating universal apps.
+# For iOS
+eas build --platform ios
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# For web
+eas build --platform web
+```
+
+See `eas.json` for EAS Build configuration.
+
+## Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/)
+- [Expo Router Guide](https://docs.expo.dev/router/introduction/)
+- [TypeScript in React Native](https://reactnative.dev/docs/typescript)
+
+## Contributing
+
+Feel free to submit issues and pull requests to improve the project.
+
+## Support
+
+For issues, questions, or suggestions, please open an issue in the repository or contact the development team.
+
+---
+
+**Happy sticker smashing!** 🎉
